@@ -6,6 +6,8 @@
 
 Select your code. AI reads the context. You get smart name suggestions.
 
+![Demo](https://raw.githubusercontent.com/2njeong/naming-consultant/main/context-naming-consultant/images/demo.gif)
+
 ## How It Works
 
 1. **Select** your code

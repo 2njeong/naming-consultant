@@ -4,6 +4,7 @@
   "description": "AI-powered naming suggestions based on code context",
   "version": "0.0.3",
   "publisher": "slowdreamer",
+  "icon": "images/icon.png",
   "license": "MIT",
   "repository": {
     "type": "git",

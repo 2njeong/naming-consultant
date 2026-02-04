@@ -6,6 +6,8 @@
 
 코드를 선택하면 AI가 앞뒤 맥락을 읽고 이름을 추천해줍니다.
 
+![Demo](https://raw.githubusercontent.com/2njeong/naming-consultant/main/context-naming-consultant/images/demo.gif)
+
 ## 어떻게 작동하나요?
 
 1. 코드를 **선택**합니다
