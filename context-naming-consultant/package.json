@@ -1,0 +1,131 @@
+{
+  "name": "context-naming-consultant",
+  "displayName": "Context Naming consultant",
+  "description": "AI-powered naming suggestions based on code context",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "context-naming-consultant.suggestName",
+        "title": "Context Naming: Suggest Name"
+      },
+      {
+        "command": "context-naming-consultant.setApiKey",
+        "title": "Context Naming: Set API Key"
+      },
+      {
+        "command": "context-naming-consultant.clearApiKey",
+        "title": "Context Naming: Clear API Key"
+      }
+    ],
+    "configuration": {
+      "title": "Context Naming Consultant",
+      "properties": {
+        "contextNamingConsultant.provider": {
+          "order": 1,
+          "type": "string",
+          "enum": ["openai", "claude", "gemini", "azure-openai"],
+          "default": "openai",
+          "enumDescriptions": [
+            "OpenAI API (GPT-4o, GPT-4 등)",
+            "Anthropic Claude API",
+            "Google Gemini API",
+            "Azure OpenAI Service"
+          ],
+          "markdownDescription": "**[필수]** 사용할 AI Provider를 선택하세요.\n\nSelect AI Provider to use."
+        },
+        "contextNamingConsultant.apiKey": {
+          "order": 2,
+          "type": "string",
+          "default": "",
+          "markdownDescription": "⚠️ **비권장! API Key가 평문으로 저장됩니다.**\n\n✅ **권장**: `Context Naming: Set API Key` 명령어 또는 환경변수 사용\n\n📖 자세한 설정 방법은 [README](https://github.com/user/context-naming-consultant#2단계-api-key-설정) 참고"
+        },
+        "contextNamingConsultant.openaiModel": {
+          "order": 3,
+          "type": "string",
+          "enum": ["gpt-4o", "gpt-4o-mini", "gpt-4-turbo", "gpt-4", "gpt-3.5-turbo"],
+          "default": "gpt-4o",
+          "markdownDescription": "**[OpenAI 선택 시에만 적용]** 사용할 OpenAI 모델.\n\nOpenAI model (only applies when Provider is OpenAI)."
+        },
+        "contextNamingConsultant.claudeModel": {
+          "order": 4,
+          "type": "string",
+          "enum": ["claude-sonnet-4-20250514", "claude-3-5-sonnet-20241022", "claude-3-5-haiku-20241022", "claude-3-opus-20240229"],
+          "default": "claude-sonnet-4-20250514",
+          "markdownDescription": "**[Claude 선택 시에만 적용]** 사용할 Claude 모델.\n\nClaude model (only applies when Provider is Claude)."
+        },
+        "contextNamingConsultant.geminiModel": {
+          "order": 5,
+          "type": "string",
+          "enum": ["gemini-2.0-flash", "gemini-1.5-pro", "gemini-1.5-flash", "gemini-pro"],
+          "default": "gemini-2.0-flash",
+          "markdownDescription": "**[Gemini 선택 시에만 적용]** 사용할 Gemini 모델.\n\nGemini model (only applies when Provider is Gemini)."
+        },
+        "contextNamingConsultant.customModel": {
+          "order": 6,
+          "type": "string",
+          "default": "",
+          "markdownDescription": "목록에 없는 새 모델을 사용하려면 여기에 직접 입력하세요.\n\n입력 시 위 모델 설정보다 우선 적용됩니다.\n\nEnter custom model name to override above settings."
+        },
+        "contextNamingConsultant.contextLines": {
+          "order": 7,
+          "type": "number",
+          "default": 10,
+          "minimum": 0,
+          "maximum": 50,
+          "markdownDescription": "AI에게 전달할 코드 맥락의 줄 수입니다.\n\n선택 영역의 앞뒤로 각각 N줄을 수집합니다.\n\nNumber of lines before/after selection to include as context."
+        },
+        "contextNamingConsultant.azureEndpoint": {
+          "order": 8,
+          "type": "string",
+          "default": "",
+          "markdownDescription": "**[Azure OpenAI 선택 시에만 적용]** 엔드포인트 URL.\n\n예: `https://your-resource.openai.azure.com`\n\nAzure OpenAI endpoint URL."
+        },
+        "contextNamingConsultant.azureDeploymentName": {
+          "order": 9,
+          "type": "string",
+          "default": "",
+          "markdownDescription": "**[Azure OpenAI 선택 시에만 적용]** 배포(deployment) 이름.\n\nAzure OpenAI deployment name."
+        },
+        "contextNamingConsultant.azureApiVersion": {
+          "order": 10,
+          "type": "string",
+          "default": "2024-02-01",
+          "markdownDescription": "**[Azure OpenAI 선택 시에만 적용]** API 버전.\n\nAzure OpenAI API version."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "typescript-eslint": "^8.48.1",
+    "eslint": "^9.39.1",
+    "typescript": "^5.9.3",
+    "ts-loader": "^9.5.4",
+    "webpack": "^5.103.0",
+    "webpack-cli": "^6.0.1",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
