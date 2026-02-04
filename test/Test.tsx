@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Context Naming Consultant - 테스트용 예시 파일
  *
