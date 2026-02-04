@@ -42,6 +42,26 @@
 
 ---
 
+## 🌐 언어 설정
+
+**이 확장은 한국어와 영어를 지원합니다!**
+
+기본적으로 VS Code 언어 설정을 따라갑니다. 바꾸고 싶다면?
+
+`Cmd+,` (Mac) / `Ctrl+,` (Windows) → **"Context Naming Language"** 검색 → 선택:
+- `auto` - VS Code 언어 따라가기 (기본값)
+- `en` - English
+- `ko` - 한국어
+
+또는 `settings.json`에 직접 추가:
+```json
+{
+  "contextNamingConsultant.language": "en"
+}
+```
+
+---
+
 ## 예시
 
 ### React useState
@@ -191,6 +211,7 @@ key는 이 순서로 확인됩니다:
 
 | 설정 | 기본값 | 설명 |
 |------|--------|------|
+| `language` | `auto` | UI 언어 (`auto`, `en`, `ko`) |
 | `provider` | `openai` | AI provider |
 | `apiKey` | - | API key (비권장) |
 | `openaiModel` | `gpt-4o` | OpenAI 모델 |

@@ -1,3 +1,4 @@
+import { localize } from "./i18n";
 import { AIProvider, NamingRules, TargetKind, TargetKindOption } from "./types";
 
 /**
@@ -44,42 +45,42 @@ export const PROVIDER_ENV_VARS: Record<AIProvider, string> = {
 export const SECRET_STORAGE_KEY = "contextNamingConsultant.apiKey";
 
 /**
- * QuickPick용 대상 종류 옵션
+ * QuickPick용 대상 종류 옵션 (i18n 적용)
  */
-export const TARGET_KIND_OPTIONS: TargetKindOption[] = [
+export const getTargetKindOptions = (): TargetKindOption[] => [
   {
-    label: "$(symbol-variable) 변수명",
-    description: "일반 변수 (camelCase)",
+    label: localize("targetKind.variable.label"),
+    description: localize("targetKind.variable.description"),
     targetKind: "variable",
   },
   {
-    label: "$(symbol-constant) 상수",
-    description: "불변 값 (UPPER_SNAKE_CASE)",
+    label: localize("targetKind.constant.label"),
+    description: localize("targetKind.constant.description"),
     targetKind: "constant",
   },
   {
-    label: "$(symbol-method) 함수명",
-    description: "함수/메서드 (camelCase)",
+    label: localize("targetKind.function.label"),
+    description: localize("targetKind.function.description"),
     targetKind: "function",
   },
   {
-    label: "$(symbol-boolean) Boolean 플래그",
-    description: "is/has/can/should 접두사 (camelCase)",
+    label: localize("targetKind.boolean.label"),
+    description: localize("targetKind.boolean.description"),
     targetKind: "boolean",
   },
   {
-    label: "$(symbol-class) 컴포넌트명",
-    description: "React/Vue 컴포넌트 (PascalCase)",
+    label: localize("targetKind.component.label"),
+    description: localize("targetKind.component.description"),
     targetKind: "component",
   },
   {
-    label: "$(symbol-field) React 상태명",
-    description: "useState [state, setState] (camelCase)",
+    label: localize("targetKind.state.label"),
+    description: localize("targetKind.state.description"),
     targetKind: "state",
   },
   {
-    label: "$(symbol-event) 이벤트 핸들러",
-    description: "handle/on 접두사 (camelCase)",
+    label: localize("targetKind.handler.label"),
+    description: localize("targetKind.handler.description"),
     targetKind: "handler",
   },
 ];

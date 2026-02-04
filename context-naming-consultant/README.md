@@ -42,6 +42,26 @@ Or visit [Marketplace page](https://marketplace.visualstudio.com/items?itemName=
 
 ---
 
+## 🌐 Language Settings
+
+**This extension supports English and Korean!**
+
+By default, it follows your VS Code language. Want to change it?
+
+`Cmd+,` (Mac) / `Ctrl+,` (Windows) → search **"Context Naming Language"** → choose:
+- `auto` - Follow VS Code language (default)
+- `en` - English
+- `ko` - 한국어
+
+Or add to `settings.json`:
+```json
+{
+  "contextNamingConsultant.language": "ko"
+}
+```
+
+---
+
 ## Examples
 
 ### React useState
@@ -191,6 +211,7 @@ File search order: `NAMING_RULES.md` → `.naming.md` → `docs/NAMING_RULES.md`
 
 | Setting | Default | Description |
 |---------|---------|-------------|
+| `language` | `auto` | UI language (`auto`, `en`, `ko`) |
 | `provider` | `openai` | AI provider |
 | `apiKey` | - | API key (not recommended) |
 | `openaiModel` | `gpt-4o` | OpenAI model |
