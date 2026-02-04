@@ -1,0 +1,4 @@
+{
+  "disallowWords": ["data", "tmp"],
+  "maxLength": 25
+}
