@@ -2,7 +2,7 @@
   "name": "context-naming-consultant",
   "displayName": "Context Naming Consultant",
   "description": "AI-powered naming suggestions based on code context",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "publisher": "slowdreamer",
   "license": "MIT",
   "repository": {

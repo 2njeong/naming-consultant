@@ -1,6 +1,6 @@
 # Context Naming Consultant
 
-[한국어](./README_ko.md)
+[한국어](https://github.com/2njeong/naming-consultant/blob/main/context-naming-consultant/README_ko.md)
 
 > Naming things is hard. This extension helps.
 
@@ -21,15 +21,13 @@ Works with **variables**, **constants**, **functions**, **booleans**, **React co
 
 ### 1. Install
 
-**From source:**
-```bash
-git clone https://github.com/2njeong/naming-consultant.git
-cd context-naming-consultant
-npm install
-npm run package
-```
+**From VS Code Marketplace:**
+1. Open VS Code
+2. `Cmd+Shift+X` (Extensions)
+3. Search "Context Naming Consultant"
+4. Click Install
 
-In VS Code: `Cmd+Shift+P` → "Extensions: Install from VSIX..." → select the `.vsix` file
+Or visit [Marketplace page](https://marketplace.visualstudio.com/items?itemName=slowdreamer.context-naming-consultant)
 
 ### 2. Set Your API Key
 
@@ -231,7 +229,11 @@ File search order: `NAMING_RULES.md` → `.naming.md` → `docs/NAMING_RULES.md`
 
 ## Development
 
+For contributors who want to build from source:
+
 ```bash
+git clone https://github.com/2njeong/naming-consultant.git
+cd context-naming-consultant
 npm install          # Install dependencies
 npm run compile      # Build once
 npm run watch        # Auto-rebuild on changes

@@ -1,6 +1,6 @@
 # Context Naming Consultant
 
-[English](./README.md)
+[English](https://github.com/2njeong/naming-consultant/blob/main/context-naming-consultant/README.md)
 
 > 네이밍, 고민되시죠? AI한테 맡기세요.
 
@@ -21,15 +21,13 @@
 
 ### 1. 설치
 
-**소스에서 설치:**
-```bash
-git clone https://github.com/2njeong/naming-consultant.git
-cd context-naming-consultant
-npm install
-npm run package
-```
+**VS Code 마켓플레이스에서:**
+1. VS Code 열기
+2. `Cmd+Shift+X` (확장)
+3. "Context Naming Consultant" 검색
+4. Install 클릭
 
-VS Code에서: `Cmd+Shift+P` → "Extensions: Install from VSIX..." → `.vsix` 파일 선택
+또는 [마켓플레이스 페이지](https://marketplace.visualstudio.com/items?itemName=slowdreamer.context-naming-consultant) 방문
 
 ### 2. API Key 설정
 
@@ -231,7 +229,11 @@ key는 이 순서로 확인됩니다:
 
 ## 개발
 
+소스에서 빌드하려는 기여자를 위한 안내:
+
 ```bash
+git clone https://github.com/2njeong/naming-consultant.git
+cd context-naming-consultant
 npm install          # 의존성 설치
 npm run compile      # 한 번 빌드
 npm run watch        # 변경 시 자동 빌드
