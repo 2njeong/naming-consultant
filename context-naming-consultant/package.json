@@ -1,8 +1,23 @@
 {
   "name": "context-naming-consultant",
-  "displayName": "Context Naming consultant",
+  "displayName": "Context Naming Consultant",
   "description": "AI-powered naming suggestions based on code context",
   "version": "0.0.1",
+  "publisher": "slowdreamer",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/2njeong/naming-consultant"
+  },
+  "keywords": [
+    "naming",
+    "ai",
+    "variable",
+    "refactoring",
+    "openai",
+    "claude",
+    "gemini"
+  ],
   "engines": {
     "vscode": "^1.85.0"
   },
